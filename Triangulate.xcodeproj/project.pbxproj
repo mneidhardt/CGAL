@@ -41,6 +41,7 @@
 		3B747AC81AE245120085E6DB /* libCGAL.11.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCGAL.11.0.0.dylib; path = ../../../../../../../../usr/local/Cellar/cgal/4.6/lib/libCGAL.11.0.0.dylib; sourceTree = "<group>"; };
 		3B747AC91AE245120085E6DB /* libgmp.10.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp.10.dylib; path = ../../../../../../../../usr/local/Cellar/gmp/6.0.0a/lib/libgmp.10.dylib; sourceTree = "<group>"; };
 		3B747ACA1AE245120085E6DB /* libmpfr.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmpfr.4.dylib; path = "../../../../../../../../usr/local/Cellar/mpfr/3.1.2-p11/lib/libmpfr.4.dylib"; sourceTree = "<group>"; };
+		3BC5BA511CA54482007F5935 /* Datasource2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Datasource2.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +90,7 @@
 		3B747AB81AE2440C0085E6DB /* Triangulate */ = {
 			isa = PBXGroup;
 			children = (
+				3BC5BA511CA54482007F5935 /* Datasource2.h */,
 				3B747AB91AE2440C0085E6DB /* main.cpp */,
 			);
 			path = Triangulate;
@@ -254,7 +256,6 @@
 					"/usr/local/Cellar/mpfr/3.1.2-p11/lib",
 				);
 				OTHER_CFLAGS = "";
-				"OTHER_CFLAGS[arch=*]" = "-I/Users/mine/mico/kode/c++/incl/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -274,7 +275,6 @@
 					/usr/local/Cellar/gmp/6.0.0a/lib,
 					"/usr/local/Cellar/mpfr/3.1.2-p11/lib",
 				);
-				"OTHER_CFLAGS[arch=*]" = "-I/Users/mine/mico/kode/c++/incl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -298,6 +298,7 @@
 				3B747ABF1AE2440C0085E6DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

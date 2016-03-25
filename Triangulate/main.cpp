@@ -10,8 +10,6 @@
 #include <iomanip>   // for flush
 #include <cmath>
 #include <GLUT/glut.h>
-#include "Datasource2.h"
-#include "Point.h"
 #include <vector>
 #include <fstream>
 #include <string>
@@ -19,8 +17,7 @@
 #include <CGAL/Simple_cartesian.h>
 #include <CGAL/Delaunay_triangulation_2.h>
 #include <CGAL/Triangulation_hierarchy_2.h>
-#include "annutil.h"
-#include "ANNComparator2.h"
+#include "Datasource2.h"
 
 #include <fstream>
 #include <cassert>
@@ -283,7 +280,7 @@ void keyboard(unsigned char key, int x, int y)
 int main(int argc, char** argv) {
     
     if (argc < 2) {
-        std::cout << "Syntax is: " << argv[0] << " n r [p]\n" <<
+        std::cout << "Syntaxen er: " << argv[0] << " n r [p]\n" <<
                   "n = number of points\n" <<
                   "r = window size\n" <<
                   "p: 1 = draw points\n" <<
