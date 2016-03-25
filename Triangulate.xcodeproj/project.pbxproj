@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3B747ABA1AE2440C0085E6DB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B747AB91AE2440C0085E6DB /* main.cpp */; };
+		3B747AC11AE244AE0085E6DB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B747AC01AE244AE0085E6DB /* Cocoa.framework */; };
+		3B747AC31AE244B70085E6DB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B747AC21AE244B70085E6DB /* OpenGL.framework */; };
+		3B747AC51AE244BE0085E6DB /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B747AC41AE244BE0085E6DB /* GLUT.framework */; };
+		3B747ACB1AE245120085E6DB /* libboost_thread-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B747AC61AE245120085E6DB /* libboost_thread-mt.dylib */; };
+		3B747ACC1AE245120085E6DB /* libCGAL_Core.11.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B747AC71AE245120085E6DB /* libCGAL_Core.11.0.0.dylib */; };
+		3B747ACD1AE245120085E6DB /* libCGAL.11.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B747AC81AE245120085E6DB /* libCGAL.11.0.0.dylib */; };
+		3B747ACE1AE245120085E6DB /* libgmp.10.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B747AC91AE245120085E6DB /* libgmp.10.dylib */; };
+		3B747ACF1AE245120085E6DB /* libmpfr.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B747ACA1AE245120085E6DB /* libmpfr.4.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +33,14 @@
 /* Begin PBXFileReference section */
 		3B747AB61AE2440C0085E6DB /* Triangulate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Triangulate; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B747AB91AE2440C0085E6DB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3B747AC01AE244AE0085E6DB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3B747AC21AE244B70085E6DB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		3B747AC41AE244BE0085E6DB /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		3B747AC61AE245120085E6DB /* libboost_thread-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_thread-mt.dylib"; path = "../../../../../../../../usr/local/Cellar/boost/1.57.0/lib/libboost_thread-mt.dylib"; sourceTree = "<group>"; };
+		3B747AC71AE245120085E6DB /* libCGAL_Core.11.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCGAL_Core.11.0.0.dylib; path = ../../../../../../../../usr/local/Cellar/cgal/4.6/lib/libCGAL_Core.11.0.0.dylib; sourceTree = "<group>"; };
+		3B747AC81AE245120085E6DB /* libCGAL.11.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCGAL.11.0.0.dylib; path = ../../../../../../../../usr/local/Cellar/cgal/4.6/lib/libCGAL.11.0.0.dylib; sourceTree = "<group>"; };
+		3B747AC91AE245120085E6DB /* libgmp.10.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp.10.dylib; path = ../../../../../../../../usr/local/Cellar/gmp/6.0.0a/lib/libgmp.10.dylib; sourceTree = "<group>"; };
+		3B747ACA1AE245120085E6DB /* libmpfr.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libmpfr.4.dylib; path = "../../../../../../../../usr/local/Cellar/mpfr/3.1.2-p11/lib/libmpfr.4.dylib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +48,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B747ACB1AE245120085E6DB /* libboost_thread-mt.dylib in Frameworks */,
+				3B747ACC1AE245120085E6DB /* libCGAL_Core.11.0.0.dylib in Frameworks */,
+				3B747ACD1AE245120085E6DB /* libCGAL.11.0.0.dylib in Frameworks */,
+				3B747ACE1AE245120085E6DB /* libgmp.10.dylib in Frameworks */,
+				3B747ACF1AE245120085E6DB /* libmpfr.4.dylib in Frameworks */,
+				3B747AC51AE244BE0085E6DB /* GLUT.framework in Frameworks */,
+				3B747AC31AE244B70085E6DB /* OpenGL.framework in Frameworks */,
+				3B747AC11AE244AE0085E6DB /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +65,14 @@
 		3B747AAD1AE2440C0085E6DB = {
 			isa = PBXGroup;
 			children = (
+				3B747AC61AE245120085E6DB /* libboost_thread-mt.dylib */,
+				3B747AC71AE245120085E6DB /* libCGAL_Core.11.0.0.dylib */,
+				3B747AC81AE245120085E6DB /* libCGAL.11.0.0.dylib */,
+				3B747AC91AE245120085E6DB /* libgmp.10.dylib */,
+				3B747ACA1AE245120085E6DB /* libmpfr.4.dylib */,
+				3B747AC41AE244BE0085E6DB /* GLUT.framework */,
+				3B747AC21AE244B70085E6DB /* OpenGL.framework */,
+				3B747AC01AE244AE0085E6DB /* Cocoa.framework */,
 				3B747AB81AE2440C0085E6DB /* Triangulate */,
 				3B747AB71AE2440C0085E6DB /* Products */,
 			);
@@ -205,6 +237,24 @@
 		3B747ABE1AE2440C0085E6DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include/,
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.57.0/lib,
+					/usr/local/Cellar/cgal/4.6/lib,
+					/usr/local/Cellar/gmp/6.0.0a/lib,
+					"/usr/local/Cellar/mpfr/3.1.2-p11/lib",
+				);
+				OTHER_CFLAGS = "";
+				"OTHER_CFLAGS[arch=*]" = "-I/Users/mine/mico/kode/c++/incl/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -212,6 +262,19 @@
 		3B747ABF1AE2440C0085E6DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include/,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/boost/1.57.0/lib,
+					/usr/local/Cellar/cgal/4.6/lib,
+					/usr/local/Cellar/gmp/6.0.0a/lib,
+					"/usr/local/Cellar/mpfr/3.1.2-p11/lib",
+				);
+				"OTHER_CFLAGS[arch=*]" = "-I/Users/mine/mico/kode/c++/incl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
