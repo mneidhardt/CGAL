@@ -36,7 +36,7 @@ public:
    /* These return vectors of points/pointers to vectors of points: */
    /* First the floating point generators: */
    vector<N>   getRandomDoublePoints(unsigned int n, bool onUnitSquare=false, float factor=1.0);
-   vector<N>   getRDInUnitCircle(unsigned int n);
+   vector<N>   getRDInCircle(unsigned int n, float radius=1.0);
    vector<N>   getRDOnUnitCircle(unsigned int n);
    vector<N>   getRDOnLine(unsigned int n);
    /* Here the integral point generators: */
@@ -98,18 +98,19 @@ vector<N> Datasource2<T,N>::getRandomDoublePoints(unsigned int n, bool onUnitSqu
 }
 
 
-/* Returns n random double points inside the unit circle. */
+/* Returns n random double points inside circle with given radius. Default radius is 1. */
 template<typename T, typename N>
-vector<N> Datasource2<T,N>::getRDInUnitCircle(unsigned int n) {
-
-   vector<N> pointset;
-
-   for (unsigned int i=0; i<n; i++) {
-      pointset.push_back(randomPointInCircle(1));
-   }
-
-   return pointset;
+vector<N> Datasource2<T,N>::getRDInCircle(unsigned int n, float radius) {
+    
+    vector<N> pointset;
+    
+    for (unsigned int i=0; i<n; i++) {
+        pointset.push_back(randomPointInCircle(radius));
+    }
+    
+    return pointset;
 }
+
 
 
 /* Returns n random double points approx. on the unit circle. 

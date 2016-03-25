@@ -12,7 +12,7 @@
 #include <GLUT/glut.h>
 #include <vector>
 #include <fstream>
-#include <string>
+#include <string.h>
 #include <CGAL/basic.h>
 #include <CGAL/Simple_cartesian.h>
 #include <CGAL/Delaunay_triangulation_2.h>
@@ -87,6 +87,7 @@ float lookZ = 0.0f;
 GLfloat pointsize = 4.0;
 GLint rectsize=700;
 int p = 1;  // What to show.
+bool incircle = false; // If true, generate points in a circle, otherwise in a square.
 
 
 void init(void) {
@@ -280,9 +281,10 @@ void keyboard(unsigned char key, int x, int y)
 int main(int argc, char** argv) {
     
     if (argc < 2) {
-        std::cout << "Syntaxen er: " << argv[0] << " n r [p]\n" <<
+        std::cout << "Syntaxen er: " << argv[0] << " n r [p] [c]\n" <<
                   "n = number of points\n" <<
                   "r = window size\n" <<
+                  "c = generate points in a circle ('c') or square otherwise\n\n" <<
                   "p: 1 = draw points\n" <<
                   "   2 = draw Delaunay\n" <<
                   "   3 = draw Delaunay and points\n" <<
@@ -296,6 +298,9 @@ int main(int argc, char** argv) {
 
     if (argc > 2) { rectsize = atoi(argv[2]); }
     if (argc > 3) { p = atoi(argv[3]); }
+    if (argc > 4 && strncmp(argv[4], "c", 1) == 0) {
+        incircle = true;
+    }
 
     if ((p&1) > 0) {
         cout << "points ";
@@ -306,14 +311,24 @@ int main(int argc, char** argv) {
     
     int n = atoi(argv[1]);
     Datasource2<Coord_type, dtPoint> dsrc;
-    dpoints = dsrc.getRandomDoublePoints(n, true, rectsize);
+    float translateX=0.0, translateY=0.0;
     
+    if (incircle) {
+        dpoints = dsrc.getRDInCircle(n, rectsize/2.0);
+        // If incircle, I translate points to the first quadrant,
+        // since the circle has its center in origo.
+        translateX = rectsize/2.0;
+        translateY = rectsize/2.0;
+    } else {
+        dpoints = dsrc.getRandomDoublePoints(n, true, rectsize);
+    }
+
     // Transform dpoints to a pointset that VD accepts:
     for (int i=0; i<dpoints.size(); i++) {
-        Site_2 t(dpoints[i].x(), dpoints[i].y());
+        Site_2 t(dpoints[i].x()+translateX, dpoints[i].y()+translateY);
         vdpoints.push_back(t);
     }
-    
+
     dt.insert(dpoints.begin(), dpoints.end());
     vd.insert(vdpoints.begin(), vdpoints.end());
     
