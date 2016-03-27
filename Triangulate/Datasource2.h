@@ -65,9 +65,11 @@ public:
    vector<N>   readLedaRationalPointset(const char* infile);
    vector<N*>* readTTLPointset(const char* infile);
 
-   /* Two utility functions... */
+   /* Some utility functions... */
    void print(vector<N>& nodes);
    void printPS(vector<N>& pointset);
+    void translatePointset(vector<N>& pointset, float translX, float translY);
+    void dumpPointset(vector<N>& pointset);
 
 };
 
@@ -645,7 +647,22 @@ void Datasource2<T,N>::printPS(vector<N>& pointset) {
 
 /**** End of file i/o related functions. ****/
 
+/**** Utility functions ****/
 
+template<typename T, typename N>
+void Datasource2<T,N>::translatePointset(vector<N>& pointset, float translX, float translY) {
+    for(typename vector<N>::iterator it = pointset.begin(); it != pointset.end(); ++it) {
+        *it = N(it->x()+translX, it->y()+translY);
+    }
+}
+
+template<typename T, typename N>
+void Datasource2<T,N>::dumpPointset(vector<N>& pointset) {
+    for(typename vector<N>::iterator it = pointset.begin(); it != pointset.end(); ++it) {
+        cout << it->x() << ", " << it->y() << "\n";
+    }
+    cout << "Size: " << pointset.size() << "\n";
+}
 
 
 /* --------------------------------------------------------------------

@@ -311,21 +311,18 @@ int main(int argc, char** argv) {
     
     int n = atoi(argv[1]);
     Datasource2<Coord_type, dtPoint> dsrc;
-    float translateX=0.0, translateY=0.0;
     
     if (incircle) {
         dpoints = dsrc.getRDInCircle(n, rectsize/2.0);
-        // If incircle, I translate points to the first quadrant,
-        // since the circle has its center in origo.
-        translateX = rectsize/2.0;
-        translateY = rectsize/2.0;
+        // Circle is centered around 0,0, so I move points into first quadrant:
+        dsrc.translatePointset(dpoints, rectsize/2.0, rectsize/2.0);
     } else {
         dpoints = dsrc.getRandomDoublePoints(n, true, rectsize);
     }
 
     // Transform dpoints to a pointset that VD accepts:
     for (int i=0; i<dpoints.size(); i++) {
-        Site_2 t(dpoints[i].x()+translateX, dpoints[i].y()+translateY);
+        Site_2 t(dpoints[i].x(), dpoints[i].y());
         vdpoints.push_back(t);
     }
 
